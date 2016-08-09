@@ -1,0 +1,29 @@
+/**
+The image used here is a placeholder.will be updated with the original ones when the design team is ready with it.
+**/
+#bookmark-container{
+  #o-bookmark-overlay-icon {
+    width: 36px;
+    height:48px;
+    line-height: 28px;
+    margin-top: 0;
+    cursor: pointer;
+    padding:0;
+    border: 1px solid #ddd;
+    &:hover {
+      color: #999;
+    }
+    &:focus {
+      color: #999;
+      border: 1px dotted #999;
+      border-radius: 0;
+    }
+  }
+  .o-bookmarked{
+    background: #ddd url(./images/bookmarkIcon.png) no-repeat;
+  }
+  .o-not-bookmarked{
+    background: #fff url(./images/bookmarkIcon.png) no-repeat;
+  }
+}
+
