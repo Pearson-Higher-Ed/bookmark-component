@@ -9,7 +9,6 @@ function ReaderObj() {
       'version': 'v2',
       'theme': 'new'
     },
-    //'backlinkSignatureEndpoint': 'https://paperapi-qa.stg-openclass.com/nextext-api/api/nextext/backlink/launchparams/book/1TTL8ARD3KQ',
     'target': 'demo-target',
     'userId': '10134931',
     'userName': 'instructor',
@@ -95,11 +94,6 @@ function ReaderObj() {
       'href': 'OPS/xhtml/file_0014.html'
     }]
   };
-
-  jQuery.get('https://paperapi-qa.stg-openclass.com/nextext-api/api/nextext/books/3SXEQFPZY5F/details?profile=yes&includeEndpoints=true&moduleIds=all&includeRoles=true&userId=nextext_smsedupi&courseInfo=true&includeBookData=true', function(resp) {
-    console.log('resp from book detail call=', resp);
-  });
-
   const reader = window.pxereader.create(config);
   this.init = function() {
     return reader;
@@ -112,9 +106,10 @@ const demoObject = {
   },
   loadIcon : function(resp) {
     this.bookmarks = resp.bookmarks;
+    var locale_str = this.getParam('locale');
     document.body.dispatchEvent(new CustomEvent('o.initBookmarkComponentDemo', {
       detail: {
-        locale:'fr',
+        locale:locale_str,
         elementId: 'bookmark-container',
         addBookmarkHandler: demoObject.addbookmarkHandler.bind(demoObject),
         removeBookmarkHandler: demoObject.removeBookmarkHandler.bind(demoObject),
@@ -173,6 +168,10 @@ const demoObject = {
         self.bookmarks.splice(index, 1);
       }
     });
+  },
+  getParam: function(item) {
+      var svalue = location.search.match(new RegExp('[\?\&]' + item + '=([^\&]*)(\&?)','i'));
+      return svalue ? svalue[1] : svalue;
   }
 };
 
