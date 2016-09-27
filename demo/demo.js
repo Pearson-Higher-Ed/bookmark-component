@@ -107,7 +107,7 @@ const demoObject = {
   loadIcon : function(resp) {
     this.bookmarks = resp.bookmarks;
     var locale_str = this.getParam('locale');
-    document.body.dispatchEvent(new CustomEvent('o.initBookmarkComponentDemo', {
+    document.body.dispatchEvent(new CustomEvent('o.initBookmarkComponent', {
       detail: {
         locale:locale_str,
         elementId: 'bookmark-container',
