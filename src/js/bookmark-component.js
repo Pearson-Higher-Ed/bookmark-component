@@ -12,7 +12,22 @@ class bookmarkComponent extends React.Component {
     };
   }
 
-  toggleBookmark(bool) {
+  componentDidMount() {
+    this.pubsub_token = window.pubsub.subscribe('IS_BOOKMARKED', function(topic, isBookmarked) {
+      if (isBookmarked) {
+        this.setState({isBookmarked: true});
+      } else {
+        this.setState({isBookmarked: false});
+      }
+    }.bind(this));
+
+  }
+
+  componentWillUnmount() {
+    window.pubsub.unsubscribe(this.pubsub_token);
+  }
+
+  toggleBookmark() {
 
     const that = this;
     function removedBookmarkCbk() {
@@ -23,7 +38,7 @@ class bookmarkComponent extends React.Component {
       that.setState({isBookmarked: true});
     }
 
-    if (bool) {
+    if (this.state.isBookmarked) {
       this.props.data.removeBookmarkHandler(removedBookmarkCbk);
     } else {
       this.props.data.addBookmarkHandler(addedBookmarkCbk);
@@ -32,15 +47,15 @@ class bookmarkComponent extends React.Component {
 
   render() {
 
-    const isBookmarked = this.props.data.isCurrentPageBookmarked();
+    //const isBookmarked = this.props.data.isCurrentPageBookmarked();
     return (
       <button id="o-bookmark-overlay-icon"
         role="checkbox"
-        onClick={this.toggleBookmark.bind(this, isBookmarked)}
-        aria-checked={isBookmarked}
-        title={this.props.intl.formatMessage(isBookmarked ? messages.bookmarkedIconText : messages.bookmarkIconText)}
-        aria-label={this.props.intl.formatMessage(isBookmarked ? messages.bookmarkedIconText : messages.bookmarkIconText)}
-        className={isBookmarked ? 'o-bookmarked' : 'o-not-bookmarked'}>
+        onClick={this.toggleBookmark.bind(this)}
+        aria-checked={this.state.isBookmarked}
+        title={this.props.intl.formatMessage(this.state.isBookmarked ? messages.bookmarkedIconText : messages.bookmarkIconText)}
+        aria-label={this.props.intl.formatMessage(this.state.isBookmarked ? messages.bookmarkedIconText : messages.bookmarkIconText)}
+        className={this.state.isBookmarked ? 'o-bookmarked' : 'o-not-bookmarked'}>
       </button>
     )
   }
