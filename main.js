@@ -35,4 +35,4 @@ export default class BookmarkComponentDemo {
   }
 }
 
-document.body.addEventListener('o.initBookmarkComponent', e => new BookmarkComponent(e.detail));
+document.body.addEventListener('o.initBookmarkComponent', e => new BookmarkComponentDemo(e.detail));
