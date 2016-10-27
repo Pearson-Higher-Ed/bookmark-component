@@ -1,20 +1,17 @@
-#bookmark-container{
-  #o-bookmark-overlay-icon {
-    width: 19px;
-    height:24px;
-    margin-top: 0;
-    cursor: pointer;
-    padding:0;
-    border:none;
-    background-color:transparent;
-  }
-
-  .o-bookmarked{
-    background: transparent url(./images/bookmarkIcon-filled.png)0 0 no-repeat;
-  }
-
-  .o-not-bookmarked{
-    background: transparent url(./images/bookmarkIcon.png)0 0 no-repeat;
-  }
+#o-bookmark-overlay-icon {
+  width: 19px;
+  height: 24px;
+  margin-top: 0;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
 }
 
+.o-bookmarked {
+  background: transparent url(./images/bookmarkIcon-filled.png) 0 0 no-repeat;
+}
+
+.o-not-bookmarked {
+  background: transparent url(./images/bookmarkIcon.png) 0 0 no-repeat;
+}
