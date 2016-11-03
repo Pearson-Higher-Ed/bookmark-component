@@ -1,10 +1,9 @@
-import React, {PropTypes} from 'react';
-import {intlShape, injectIntl} from 'react-intl';
-import {messages} from './defaultMessages';
+import React, { PropTypes } from 'react';
+import { intlShape, injectIntl } from 'react-intl';
+import { messages } from './defaultMessages';
 
-class bookmarkComponent extends React.Component {
+class BookmarkIcon extends React.Component {
   constructor(props) {
-
     super(props);
     const _isBookmarked = this.props.data.isCurrentPageBookmarked();
     this.state ={
@@ -40,14 +39,13 @@ class bookmarkComponent extends React.Component {
 
     if (this.state.isBookmarked) {
       this.props.data.removeBookmarkHandler(removedBookmarkCbk);
-    } else {
+    } 
+    else {
       this.props.data.addBookmarkHandler(addedBookmarkCbk);
     }
   }
 
   render() {
-
-    //const isBookmarked = this.props.data.isCurrentPageBookmarked();
     return (
       <button id="o-bookmark-overlay-icon"
         role="checkbox"
@@ -61,7 +59,7 @@ class bookmarkComponent extends React.Component {
   }
 }
 
-bookmarkComponent.propTypes = {
+BookmarkIcon.propTypes = {
   intl: intlShape.isRequired,
   locale: PropTypes.string,
   data: PropTypes.shape({
@@ -71,4 +69,4 @@ bookmarkComponent.propTypes = {
   })
 };
 
-export default injectIntl(bookmarkComponent);
+export default injectIntl(BookmarkIcon);
