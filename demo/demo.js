@@ -118,7 +118,7 @@ const demoObject = {
     }));
   },
   isCurrentPageBookmarked : function() {
-    if (!this._reader || !this._reader.getCurrentPage) {
+    /*if (!this._reader || !this._reader.getCurrentPage) {
       return false;
     }
 
@@ -133,7 +133,8 @@ const demoObject = {
     }
     catch (e) {
       return false;
-    }
+    }*/
+    return true;
   },
   onNext : function() {
     this._reader.renderNextPage();
