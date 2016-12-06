@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
-import { messages } from './defaultMessages';
 import SvgIcon from 'material-ui/SvgIcon';
-
 
 const BookmarkIconFilled = (props) => (
   <SvgIcon {...props}>
@@ -18,10 +16,16 @@ const BookmarkIconUnfilled = (props) => (
 class BookmarkIcon extends React.Component {
   constructor(props) {
     super(props);
-    //const _isBookmarked = this.props.data.isCurrentPageBookmarked();
+        
     this.state ={
       'isBookmarked': this.props.data.isCurrentPageBookmarked()
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      'isBookmarked': nextProps.data.isCurrentPageBookmarked()
+    });
   }
 
   renderFilled() {
@@ -31,34 +35,35 @@ class BookmarkIcon extends React.Component {
       </div>
     )
   }
-  renderUnFilled() {
-    return(
-      <div className="unfilled">
-        <BookmarkIconUnfilled onClick={this.handleBookmarkClk}  />
-      </div>
-    )
   
+  renderUnFilled() {
+    return (
+      <div className="unfilled">
+        <BookmarkIconUnfilled onClick={this.handleBookmarkClk} />
+      </div>
+    )  
   }
 
   handleBookmarkClk = () => {
-    if( this.state.isBookmarked == true ){
-    this.setState({ isBookmarked: false })
+    if (this.state.isBookmarked) {
+      this.setState({ isBookmarked: false });
+      this.props.data.removeBookmarkHandler();
     }
-    else
-      this.setState({ isBookmarked: true })
+    else {
+      this.setState({ isBookmarked: true });
+      this.props.data.addBookmarkHandler();
+    }
   }
 
-  render() {
-    
-
+  render() {    
     return (
       <div>
-        {this.state.isBookmarked ? this.renderFilled() : this.renderUnFilled()}
-        
+        {this.state.isBookmarked ? this.renderFilled() : this.renderUnFilled()}        
       </div>
     )
   }
 }
+
 BookmarkIcon.propTypes = {
  locale: PropTypes.string,
  data: PropTypes.shape({
@@ -67,7 +72,5 @@ BookmarkIcon.propTypes = {
    isCurrentPageBookmarked: PropTypes.func
  })
 };
-
-
 
 export default BookmarkIcon;
