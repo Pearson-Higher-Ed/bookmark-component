@@ -65,12 +65,12 @@ class BookmarkIcon extends React.Component {
 }
 
 BookmarkIcon.propTypes = {
- locale: PropTypes.string,
- data: PropTypes.shape({
-   addBookmarkHandler: PropTypes.func,
-   removeBookmarkHandler: PropTypes.func,
-   isCurrentPageBookmarked: PropTypes.func
- })
+  locale: PropTypes.string,
+  data: PropTypes.shape({
+    addBookmarkHandler: PropTypes.func,
+    removeBookmarkHandler: PropTypes.func,
+    isCurrentPageBookmarked: PropTypes.func
+  })
 };
 
 export default BookmarkIcon;
