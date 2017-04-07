@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
+import { InternationalSupport } from '@pearson-incubator/aquila-js-core';
 import ComponentOwner from './src/js/component-owner';
+import msgObject from './translations';
 import './main.scss';
-
 
 export default class BookmarkIconDemo {
   constructor(config) {
@@ -11,16 +12,16 @@ export default class BookmarkIconDemo {
   }
 
   init(config) {
-    const locale = config.locale ? config.locale : 'en';
+    this.intlObj = new InternationalSupport(msgObject, config.locale);
     ReactDOM.render(
-   		<IntlProvider locale={locale}>
-    		<ComponentOwner data={config}/>
-    	</IntlProvider>,
+      <IntlProvider locale={this.intlObj.getLocale()} messages={this.intlObj.getMessages()}>
+        <ComponentOwner data={config} />
+      </IntlProvider>,
       document.getElementById(config.elementId)
     );
   }
 }
 
-export BookmarkIcon from './src/js/BookmarkIcon';
+export { BookmarkIconComponent } from './src/js/BookmarkIconComponent';
 
 document.body.addEventListener('o.initBookmarkComponent', e => new BookmarkIconDemo(e.detail));

@@ -1,4 +1,4 @@
 {
-  "bookmarkIconText": "Page ajoutée aux signets",
-  "bookmarkedIconText": "Ajouter cette page aux signets"
+  "BookmarkIconFilled": "Icône signet rempli",
+  "BookmarkIconUnfilled": "Icône de signet non rempli"
 }

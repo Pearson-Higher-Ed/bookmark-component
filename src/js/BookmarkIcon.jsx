@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
+import { intlShape, injectIntl } from 'react-intl';
 import SvgIcon from 'material-ui/SvgIcon';
+import { messages } from './defaultMessages';
 
 const BookmarkIconFilled = (props) => (
   <SvgIcon {...props}>
@@ -29,16 +31,18 @@ class BookmarkIcon extends React.Component {
   }
 
   renderFilled() {
+    const { formatMessage } = this.props.intl;
     return(
-      <div className="filled">
+      <div className="filled" aria-label={formatMessage(messages.BookmarkIconFilled)}>
         <BookmarkIconFilled onClick={this.handleBookmarkClk} />
       </div>
     )
   }
   
   renderUnFilled() {
+    const { formatMessage } = this.props.intl;
     return (
-      <div className="unfilled">
+      <div className="unfilled" aria-label={formatMessage(messages.BookmarkIconUnfilled)}>
         <BookmarkIconUnfilled onClick={this.handleBookmarkClk} />
       </div>
     )  
@@ -55,7 +59,7 @@ class BookmarkIcon extends React.Component {
     }
   }
 
-  render() {    
+  render() {
     return (
       <div>
         {this.state.isBookmarked ? this.renderFilled() : this.renderUnFilled()}        
@@ -66,6 +70,7 @@ class BookmarkIcon extends React.Component {
 
 BookmarkIcon.propTypes = {
   locale: PropTypes.string,
+  intl: intlShape.isRequired,
   data: PropTypes.shape({
     addBookmarkHandler: PropTypes.func,
     removeBookmarkHandler: PropTypes.func,
@@ -73,4 +78,4 @@ BookmarkIcon.propTypes = {
   })
 };
 
-export default BookmarkIcon;
+export default injectIntl(BookmarkIcon);
