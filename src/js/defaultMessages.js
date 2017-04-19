@@ -6,10 +6,10 @@ import {defineMessages} from 'react-intl';
 export const messages = defineMessages({
   BookmarkIconFilled: {
     id: 'BookmarkIconFilled',
-    defaultMessage: 'Bookmark Icon Filled'
+    defaultMessage: 'Bookmarked'
   },
   BookmarkIconUnfilled: {
     id: 'BookmarkIconUnfilled',
-    defaultMessage: 'Bookmark Icon Unfilled'
+    defaultMessage: 'Not Bookmarked'
   }
 });

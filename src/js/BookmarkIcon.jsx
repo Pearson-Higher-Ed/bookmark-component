@@ -30,20 +30,20 @@ class BookmarkIcon extends React.Component {
     });
   }
 
-  renderFilled() {
+  renderFilled(style) {
     const { formatMessage } = this.props.intl;
     return(
       <div className="filled" aria-label={formatMessage(messages.BookmarkIconFilled)}>
-        <BookmarkIconFilled onClick={this.handleBookmarkClk} />
+        <BookmarkIconFilled style={style.icon} viewBox="0 0 15 18" onClick={this.handleBookmarkClk} />
       </div>
     )
   }
   
-  renderUnFilled() {
+  renderUnFilled(style) {
     const { formatMessage } = this.props.intl;
     return (
       <div className="unfilled" aria-label={formatMessage(messages.BookmarkIconUnfilled)}>
-        <BookmarkIconUnfilled onClick={this.handleBookmarkClk} />
+        <BookmarkIconUnfilled style={style.icon} viewBox="0 0 15 18" onClick={this.handleBookmarkClk} />
       </div>
     )  
   }
@@ -60,9 +60,15 @@ class BookmarkIcon extends React.Component {
   }
 
   render() {
+    const style = {
+      icon: {
+        height: '20px',
+        width: '16px'
+      }
+    }
     return (
       <div>
-        {this.state.isBookmarked ? this.renderFilled() : this.renderUnFilled()}        
+        {this.state.isBookmarked ? this.renderFilled(style) : this.renderUnFilled(style)}        
       </div>
     )
   }
