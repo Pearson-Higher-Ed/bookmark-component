@@ -7,7 +7,7 @@ export const BookmarkIconComponent = function BookmarkIconComponent(paramsObj) {
   const intlObj = new InternationalSupport(paramsObj.locale);
   return (<IntlProvider locale={intlObj.getLocale()} messages={intlObj.getMessages()}>
     <BookmarkIcon
-    	data={paramsObj}
+    	data={paramsObj.data}
     />
   </IntlProvider>);
 };

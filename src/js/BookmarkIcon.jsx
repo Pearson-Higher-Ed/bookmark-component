@@ -20,13 +20,13 @@ class BookmarkIcon extends React.Component {
     super(props);
         
     this.state ={
-      'isBookmarked': this.props.data.isCurrentPageBookmarked
+      'isBookmarked': this.props.data.isCurrentPageBookmarked()
     };
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      'isBookmarked': nextProps.data.isCurrentPageBookmarked
+      'isBookmarked': nextProps.data.isCurrentPageBookmarked()
     });
   }
 
@@ -48,14 +48,15 @@ class BookmarkIcon extends React.Component {
     )  
   }
 
-  handleBookmarkClk = () => {
+  handleBookmarkClk = (e) => {
+    e.preventDefault();
     if (this.state.isBookmarked) {
       this.setState({ isBookmarked: false });
-      this.props.data.removeBookmarkHandler;
+      this.props.data.removeBookmarkHandler();
     }
     else {
       this.setState({ isBookmarked: true });
-      this.props.data.addBookmarkHandler;
+      this.props.data.addBookmarkHandler();
     }
   }
 
