@@ -4,16 +4,18 @@ import enLocaleData from 'react-intl/locale-data/en';
 import frLocaleData from 'react-intl/locale-data/fr';
 import tsLocaleData from 'react-intl/locale-data/ts';
 
-window.addbookmarkHandler = function() {
-  alert('adding bookmark from application');
+/* eslint-disable no-alert */
+
+window.addbookmarkHandler = () => {
+  window.alert('adding bookmark from application');
 };
 
-window.removeBookmarkHandler = function() {
-  alert('removing bookmark from application');
+window.removeBookmarkHandler = () => {
+  window.alert('removing bookmark from application');
 };
 
-window.isCurrentPageBookmarked = function() {
-  alert('checking bookmark from application');
+window.isCurrentPageBookmarked = () => {
+  window.alert('checking bookmark from application');
 };
 
 const localeData = {
@@ -23,7 +25,7 @@ const localeData = {
 };
 
 function getParam(item) {
-  const svalue = location.search.match(new RegExp('[\?\&]' + item + '=([^\&]*)(\&?)', 'i'));
+  const svalue = window.location.search.match(new RegExp(`[?&]${item}=([^&]*)(&?)`, 'i'));
   return svalue ? svalue[1] : svalue;
 }
 
@@ -33,7 +35,7 @@ function init() {
   addLocaleData(localeData[region]);
 
   // Create new instance of notes component
-  document.body.dispatchEvent(new CustomEvent('o.initBookmarkComponent', {
+  document.body.dispatchEvent(new window.CustomEvent('o.initBookmarkComponent', {
     detail: {
       elementId: 'bookmark-container',
       locale: region,
