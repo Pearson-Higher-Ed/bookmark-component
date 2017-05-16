@@ -16,7 +16,7 @@ html,body { height:100%; }
 .header{
     border-bottom: 1px solid #a6a8ab;
     background: #005a70;
-    padding:3px 0;
+    padding: 10px 0;
 }
 
 .header h1,
