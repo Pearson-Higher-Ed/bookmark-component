@@ -69,7 +69,7 @@ class BookmarkIcon extends React.Component {
   renderFilled(style) {
     const { formatMessage } = this.props.intl;
     return (
-      <div className="filled" aria-label={formatMessage(messages.BookmarkIconFilled)}>
+      <div className="filled" role="button" aria-label={formatMessage(messages.BookmarkIconFilled)}>
         <BookmarkIconFilled
           style={style.icon}
           viewBox="0 0 15 18"
@@ -85,7 +85,7 @@ class BookmarkIcon extends React.Component {
   renderUnFilled(style) {
     const { formatMessage } = this.props.intl;
     return (
-      <div className="unfilled" aria-label={formatMessage(messages.BookmarkIconUnfilled)}>
+      <div className="unfilled" role="button" aria-label={formatMessage(messages.BookmarkIconUnfilled)}>
         <BookmarkIconUnfilled
           style={style.icon}
           viewBox="0 0 15 18"

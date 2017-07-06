@@ -1,4 +1,4 @@
 {
-  "BookmarkIconFilled": "Bookmarked",
-  "BookmarkIconUnfilled": "Not Bookmarked"
+  "BookmarkIconFilled": "Click to remove the bookmark",
+  "BookmarkIconUnfilled": "Click to bookmark the page"
 }
