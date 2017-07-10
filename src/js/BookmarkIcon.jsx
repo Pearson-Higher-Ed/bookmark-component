@@ -59,6 +59,7 @@ class BookmarkIcon extends React.Component {
       isBookmarked: nextProps.data.isCurrentPageBookmarked()
     });
   }
+
   /* This function triggers the Bookmark to be selected or unselected on Enter click */
   handleBookmarkKeySelect = (event) => {
     if ((event.which || event.keyCode) === 13) {
@@ -69,14 +70,10 @@ class BookmarkIcon extends React.Component {
   renderFilled(style) {
     const { formatMessage } = this.props.intl;
     return (
-      <div className="filled" role="button" aria-label={formatMessage(messages.BookmarkIconFilled)}>
+      <div className="filled" role="button" tabIndex="0" aria-label={formatMessage(messages.BookmarkIconFilled)} onClick={this.handleBookmarkClk} onKeyDown={this.handleBookmarkKeySelect}>
         <BookmarkIconFilled
           style={style.icon}
           viewBox="0 0 15 18"
-          onClick={this.handleBookmarkClk}
-          role="button"
-          tabIndex="0"
-          onKeyDown={this.handleBookmarkKeySelect}
         />
       </div>
     );
@@ -85,14 +82,10 @@ class BookmarkIcon extends React.Component {
   renderUnFilled(style) {
     const { formatMessage } = this.props.intl;
     return (
-      <div className="unfilled" role="button" aria-label={formatMessage(messages.BookmarkIconUnfilled)}>
+      <div className="unfilled" role="button" tabIndex="0" aria-label={formatMessage(messages.BookmarkIconUnfilled)} onClick={this.handleBookmarkClk} onKeyDown={this.handleBookmarkKeySelect}>
         <BookmarkIconUnfilled
           style={style.icon}
           viewBox="0 0 15 18"
-          role="button"
-          tabIndex="0"
-          onClick={this.handleBookmarkClk}
-          onKeyDown={this.handleBookmarkKeySelect}
         />
       </div>
     );
