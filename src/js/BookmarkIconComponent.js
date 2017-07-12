@@ -29,4 +29,5 @@ const BookmarkIconComponent = (paramsObj) => {
   );
 };
 
-export { BookmarkIconComponent };
+export default BookmarkIconComponent;
+
