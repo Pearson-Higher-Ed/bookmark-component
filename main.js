@@ -22,6 +22,6 @@ export default class BookmarkIconDemo {
   }
 }
 
-export { BookmarkIconComponent } from './src/js/BookmarkIconComponent';
+export BookmarkIconComponent from './src/js/BookmarkIconComponent';
 
 document.body.addEventListener('o.initBookmarkComponent', e => new BookmarkIconDemo(e.detail));
