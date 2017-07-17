@@ -1,6 +1,6 @@
 {
   "name": "@pearson-incubator/bookmark-icon",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "Bookmark icon component where users can bookmark pages in a book",
   "main": "./main.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
-    "coveragePathIgnorePatterns" : [
+    "coveragePathIgnorePatterns": [
       "src/js/InternationalSupport.jsx"
     ],
     "setupFiles": [
@@ -41,12 +41,10 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      
-    ],
+    "transformIgnorePatterns": [],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-       "\\.(jpg|jpeg|png|svg)$": "<rootDir>/config/jest/fileMock.js"
+      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/config/jest/fileMock.js"
     }
   },
   "author": "Johnson Nguyen",
