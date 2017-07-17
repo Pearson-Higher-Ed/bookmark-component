@@ -62,7 +62,8 @@ class BookmarkIcon extends React.Component {
 
   /* This function triggers the Bookmark to be selected or unselected on Enter click */
   handleBookmarkKeySelect = (event) => {
-    if ((event.which || event.keyCode) === 13) {
+    if ((event.key === ' ') || (event.key === 'Enter')) {
+      event.preventDefault();
       this.handleBookmarkClk();
     }
   }
