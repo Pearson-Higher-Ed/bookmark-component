@@ -71,7 +71,15 @@ class BookmarkIcon extends React.Component {
   renderFilled(style) {
     const { formatMessage } = this.props.intl;
     return (
-      <div className="filled" role="button" tabIndex="0" aria-label={formatMessage(messages.BookmarkIconFilled)} onClick={this.handleBookmarkClk} onKeyDown={this.handleBookmarkKeySelect}>
+      <div
+        className="filled"
+        role="button"
+        tabIndex="0"
+        aria-pressed="true"
+        aria-label={formatMessage(messages.BookmarkIconFilled)}
+        onClick={this.handleBookmarkClk}
+        onKeyDown={this.handleBookmarkKeySelect}
+      >
         <BookmarkIconFilled
           style={style.icon}
           viewBox="0 0 15 18"
@@ -83,7 +91,15 @@ class BookmarkIcon extends React.Component {
   renderUnFilled(style) {
     const { formatMessage } = this.props.intl;
     return (
-      <div className="unfilled" role="button" tabIndex="0" aria-label={formatMessage(messages.BookmarkIconUnfilled)} onClick={this.handleBookmarkClk} onKeyDown={this.handleBookmarkKeySelect}>
+      <div
+        className="unfilled"
+        role="button"
+        tabIndex="0"
+        aria-pressed="false"
+        aria-label={formatMessage(messages.BookmarkIconUnfilled)}
+        onClick={this.handleBookmarkClk}
+        onKeyDown={this.handleBookmarkKeySelect}
+      >
         <BookmarkIconUnfilled
           style={style.icon}
           viewBox="0 0 15 18"
