@@ -82,7 +82,8 @@ class BookmarkIcon extends React.Component {
       >
         <BookmarkIconFilled
           style={style.icon}
-          viewBox="0 0 15 18"
+          viewBox="0 0 14 18"
+          preserveAspectRatio="xMidYMid meet"
         />
       </div>
     );
@@ -102,7 +103,8 @@ class BookmarkIcon extends React.Component {
       >
         <BookmarkIconUnfilled
           style={style.icon}
-          viewBox="0 0 15 18"
+          viewBox="0 0 14 18"
+          preserveAspectRatio="xMidYMid meet"
         />
       </div>
     );
@@ -121,8 +123,9 @@ class BookmarkIcon extends React.Component {
   render() {
     const style = {
       icon: {
-        height: '20px',
-        width: '16px'
+        height: '19px',
+        width: '20px',
+        verticalAlign: 'middle'
       }
     };
     return (
