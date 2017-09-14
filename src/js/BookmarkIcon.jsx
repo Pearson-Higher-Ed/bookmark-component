@@ -64,9 +64,7 @@ class BookmarkIcon extends React.Component {
       height: 24
     };
     return (
-      <div>
-        {this.state.isBookmarked ? this.renderFilled(style) : this.renderUnFilled(style)}
-      </div>
+      this.state.isBookmarked ? this.renderFilled(style) : this.renderUnFilled(style)
     );
   }
 }

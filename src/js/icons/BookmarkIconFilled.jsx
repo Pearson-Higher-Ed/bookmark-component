@@ -27,7 +27,7 @@ const BookmarkFilled = props => (
   </SvgIcon>
 );
 const BookmarkIconFilled = ({ ariaLabel, iconClick, iconStyle }) => (
-  <IconButton autoFocus className="bookmarkIcon" aria-label={ariaLabel} iconStyle={iconStyle} onTouchTap={iconClick}><BookmarkFilled viewBox="-6 -3 24 24" /></IconButton>
+  <IconButton className="bookmarkIcon" aria-label={ariaLabel} iconStyle={iconStyle} onTouchTap={iconClick}><BookmarkFilled viewBox="-6 -3 24 24" /></IconButton>
 );
 
 BookmarkIconFilled.propTypes = {
