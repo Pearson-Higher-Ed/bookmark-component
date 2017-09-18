@@ -54,7 +54,6 @@
     "url": "https://github.com/Pearson-Higher-Ed/"
   },
   "dependencies": {
-    "react-intl": "~2.0.1",
     "prop-types": "^15.5.10",
     "@pearson-incubator/aquila-js-core": "^0.2.39",
     "react-test-renderer": "^15.5.4"
@@ -95,6 +94,7 @@
     "react-addons-test-utils": "^15.4.0",
     "regenerator-runtime": "^0.10.5",
     "react-dom": "^15.4.0",
+    "react-intl": "~2.3.0",
     "react-tap-event-plugin": "^2.0.1",
     "sass-loader": "^4.1.1",
     "semver": "~5.1.0",
@@ -108,7 +108,7 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-tap-event-plugin": "~2.0.1",
-    "react-intl": "~2.1.5"
+    "react-intl": "~2.3.0"
   },
   "keywords": [
     "pearson-components"
