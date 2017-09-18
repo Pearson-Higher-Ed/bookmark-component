@@ -1,6 +1,6 @@
 {
   "name": "@pearson-incubator/bookmark-icon",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "description": "Bookmark icon component where users can bookmark pages in a book",
   "main": "./main.js",
   "scripts": {
