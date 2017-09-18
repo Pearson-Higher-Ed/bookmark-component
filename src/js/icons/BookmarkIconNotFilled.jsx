@@ -23,7 +23,7 @@ import IconButton from 'material-ui/IconButton';
  */
 const BookmarkNotFilled = props => (
   <SvgIcon {...props}>
-    <path fill="#6A7070" d="M10 13L6 9.224 2 13V2h8v11zm1.5-13H.5a.5.5 0 0 0-.5.5v16a.499.499 0 0 0 .844.363L6 11.988l5.156 4.875a.504.504 0 0 0 .542.095A.499.499 0 0 0 12 16.5V.5a.5.5 0 0 0-.5-.5z" />
+    <path d="M10 13L6 9.224 2 13V2h8v11zm1.5-13H.5a.5.5 0 0 0-.5.5v16a.499.499 0 0 0 .844.363L6 11.988l5.156 4.875a.504.504 0 0 0 .542.095A.499.499 0 0 0 12 16.5V.5a.5.5 0 0 0-.5-.5z" />
   </SvgIcon>
 );
 const BookmarkIconNotFilled = ({ ariaLabel, iconClick, iconStyle }) => (

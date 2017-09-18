@@ -24,6 +24,7 @@ const BookmarkIconComponent = (paramsObj) => {
     <IntlProvider locale={intlObj.getLocale()} messages={intlObj.getMessages()}>
       <BookmarkIcon
         data={paramsObj.data}
+        iconStyle={paramsObj.iconStyle}
       />
     </IntlProvider>
   );

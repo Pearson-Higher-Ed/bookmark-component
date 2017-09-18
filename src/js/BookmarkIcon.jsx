@@ -34,17 +34,17 @@ class BookmarkIcon extends React.Component {
     });
   }
 
-  renderFilled(style) {
+  renderFilled() {
     const { formatMessage } = this.props.intl;
     return (
-      <BookmarkIconFilled iconStyle={style} ariaLabel={formatMessage(messages.BookmarkIconFilled)} iconClick={this.handleBookmarkClk} />
+      <BookmarkIconFilled iconStyle={this.props.iconStyle} ariaLabel={formatMessage(messages.BookmarkIconFilled)} iconClick={this.handleBookmarkClk} />
     );
   }
 
-  renderUnFilled(style) {
+  renderUnFilled() {
     const { formatMessage } = this.props.intl;
     return (
-      <BookmarkIconNotFilled iconStyle={style} ariaLabel={formatMessage(messages.BookmarkIconUnfilled)} iconClick={this.handleBookmarkClk} />
+      <BookmarkIconNotFilled iconStyle={this.props.iconStyle} ariaLabel={formatMessage(messages.BookmarkIconUnfilled)} iconClick={this.handleBookmarkClk} />
     );
   }
 
@@ -59,12 +59,8 @@ class BookmarkIcon extends React.Component {
   };
 
   render() {
-    const style = {
-      width: 24,
-      height: 24
-    };
     return (
-      this.state.isBookmarked ? this.renderFilled(style) : this.renderUnFilled(style)
+      this.state.isBookmarked ? this.renderFilled() : this.renderUnFilled()
     );
   }
 }
@@ -75,7 +71,15 @@ BookmarkIcon.propTypes = {
     addBookmarkHandler: PropTypes.func,
     removeBookmarkHandler: PropTypes.func,
     isCurrentPageBookmarked: PropTypes.func
-  }).isRequired
+  }).isRequired,
+  iconStyle: PropTypes.object
+};
+BookmarkIcon.defaultProps = {
+  iconStyle: {
+    fill: '#6A7070',
+    width: 24,
+    height: 24
+  }
 };
 
 export default injectIntl(BookmarkIcon);

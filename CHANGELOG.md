@@ -1,3 +1,18 @@
+<a name="0.1.28"></a>
+## [0.1.28](https://github.com/Pearson-Higher-Ed/compare/v0.1.27...v0.1.28) (2017-09-18)
+
+
+
+<a name="0.1.27"></a>
+## [0.1.27](https://github.com/Pearson-Higher-Ed/compare/v0.1.26...v0.1.27) (2017-09-18)
+
+
+
+<a name="0.1.26"></a>
+## [0.1.26](https://github.com/Pearson-Higher-Ed/compare/v0.1.25...v0.1.26) (2017-09-18)
+
+
+
 <a name="0.1.25"></a>
 ## [0.1.25](https://github.com/Pearson-Higher-Ed/compare/v0.1.24...v0.1.25) (2017-09-14)
 
