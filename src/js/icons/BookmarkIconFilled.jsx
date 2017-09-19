@@ -26,13 +26,14 @@ const BookmarkFilled = props => (
     <path d="M11.5 0H.5a.5.5 0 0 0-.5.5v16a.499.499 0 0 0 .844.364L6 11.988l5.156 4.876a.504.504 0 0 0 .542.095.499.499 0 0 0 .302-.46V.5a.5.5 0 0 0-.5-.5z" />
   </SvgIcon>
 );
-const BookmarkIconFilled = ({ ariaLabel, iconClick, iconStyle }) => (
-  <IconButton className="bookmarkIcon" aria-label={ariaLabel} iconStyle={iconStyle} onTouchTap={iconClick}><BookmarkFilled viewBox="-6 -3 24 24" /></IconButton>
+const BookmarkIconFilled = ({ ariaLabel, iconClick, iconStyle, rippleColor }) => (
+  <IconButton focusRippleColor={rippleColor} touchRippleColor={rippleColor} className="bookmarkIcon" aria-label={ariaLabel} iconStyle={iconStyle} onTouchTap={iconClick}><BookmarkFilled viewBox="-6 -3 24 24" /></IconButton>
 );
 
 BookmarkIconFilled.propTypes = {
   ariaLabel: PropTypes.string,
   iconClick: PropTypes.func,
-  iconStyle: PropTypes.object
+  iconStyle: PropTypes.object,
+  rippleColor: PropTypes.string
 };
 export default BookmarkIconFilled;

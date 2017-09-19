@@ -37,14 +37,14 @@ class BookmarkIcon extends React.Component {
   renderFilled() {
     const { formatMessage } = this.props.intl;
     return (
-      <BookmarkIconFilled iconStyle={this.props.iconStyle} ariaLabel={formatMessage(messages.BookmarkIconFilled)} iconClick={this.handleBookmarkClk} />
+      <BookmarkIconFilled iconStyle={this.props.iconStyle} ariaLabel={formatMessage(messages.BookmarkIconFilled)} iconClick={this.handleBookmarkClk} rippleColor={this.props.rippleColor} />
     );
   }
 
   renderUnFilled() {
     const { formatMessage } = this.props.intl;
     return (
-      <BookmarkIconNotFilled iconStyle={this.props.iconStyle} ariaLabel={formatMessage(messages.BookmarkIconUnfilled)} iconClick={this.handleBookmarkClk} />
+      <BookmarkIconNotFilled iconStyle={this.props.iconStyle} ariaLabel={formatMessage(messages.BookmarkIconUnfilled)} iconClick={this.handleBookmarkClk} rippleColor={this.props.rippleColor} />
     );
   }
 
@@ -72,7 +72,8 @@ BookmarkIcon.propTypes = {
     removeBookmarkHandler: PropTypes.func,
     isCurrentPageBookmarked: PropTypes.func
   }).isRequired,
-  iconStyle: PropTypes.object
+  iconStyle: PropTypes.object,
+  rippleColor: PropTypes.string
 };
 BookmarkIcon.defaultProps = {
   iconStyle: {
