@@ -25,6 +25,7 @@ const BookmarkIconComponent = (paramsObj) => {
       <BookmarkIcon
         data={paramsObj.data}
         iconStyle={paramsObj.iconStyle}
+        rippleColor={paramsObj.rippleColor}
       />
     </IntlProvider>
   );
