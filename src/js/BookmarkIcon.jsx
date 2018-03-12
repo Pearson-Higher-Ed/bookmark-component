@@ -49,11 +49,12 @@ class BookmarkIcon extends React.Component {
   }
 
   handleBookmarkClk = () => {
+    const isBookmarked = this.props.data.isBookmarked;
     if (this.state.isBookmarked) {
-      this.setState({ isBookmarked: false });
+      this.setState({ isBookmarked: isBookmarked || false });
       this.props.data.removeBookmarkHandler();
     } else {
-      this.setState({ isBookmarked: true });
+      this.setState({ isBookmarked: isBookmarked || true });
       this.props.data.addBookmarkHandler();
     }
   };
@@ -70,7 +71,8 @@ BookmarkIcon.propTypes = {
   data: PropTypes.shape({
     addBookmarkHandler: PropTypes.func,
     removeBookmarkHandler: PropTypes.func,
-    isCurrentPageBookmarked: PropTypes.func
+    isCurrentPageBookmarked: PropTypes.func,
+    isBookmarked: PropTypes.bool
   }).isRequired,
   iconStyle: PropTypes.object,
   rippleColor: PropTypes.string
@@ -80,7 +82,8 @@ BookmarkIcon.defaultProps = {
     fill: '#6A7070',
     width: 24,
     height: 24
-  }
+  },
+  rippleColor: '#000'
 };
 
 export default injectIntl(BookmarkIcon);
